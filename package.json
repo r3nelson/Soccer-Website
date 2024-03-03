@@ -9,7 +9,7 @@
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
     "build:css": "postcss src/index.css -o dist/styles.css",
-    "watch:css": "postcss styles.css -o dist/styles.css --watch"
+    "watch:css": "postcss src/indexcss -o dist/styles.css --watch"
   },
   "dependencies": {
     "react": "^18.2.0",
