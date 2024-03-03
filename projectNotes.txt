@@ -1,0 +1,18 @@
+Miso Project Notes
+
+When creating vite project what is difference between typescript and typescript + SWC
+Create react app vs vite.
+
+Note: when installing tailwind, you can install it as a dev dependency. Tailwind will transform your code into a css file. Once these are created you don’t need the actual Tailwind configs in your production build
+
+When installing tailwind and dependencies. I had trouble getting postcss to work. I installed postcss-cli and that fixed the problem.
+
+Remember to add outputted css file from tailwind to index.html
+
+When mapping over arrays in react remember you need a key for each mapped item
+
+I need to make navElement return a single li
+
+I can make a new componenet called NavSubLists to return all the NavSubLists
+
+I can make another componenet called NavSubListsContainer to structure all the NavSubLists

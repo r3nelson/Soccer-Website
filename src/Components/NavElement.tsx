@@ -1,34 +1,55 @@
+import { useState } from "react";
+
 interface NavElementProps {
   description: string;
-  showItems?: (e: React.MouseEvent<HTMLElement, MouseEvent>) => void | null;
-  hideItems?: (e: React.MouseEvent<HTMLElement, MouseEvent>) => void | null;
-  subElements?: JSX.Element[] | null;
-  embededSubElements: boolean;
+  //   showItems?: (e: React.MouseEvent<HTMLElement, MouseEvent>) => void | null;
+  //   hideItems?: (e: React.MouseEvent<HTMLElement, MouseEvent>) => void | null;
+  //   children?: React.ReactNode;
 }
 
 const NavElement: React.FC<NavElementProps> = ({
-  showItems,
-  subElements,
   description,
-  hideItems,
-  embededSubElements,
+  //   showItems,
+  //   hideItems,
+  //   children,
 }) => {
+  const [isHovered, setIsHovered] = useState<boolean>(false);
+
+  //   const showSubList = (childElement: HTMLElement) => {
+  //     childElement.classList.remove("hidden");
+  //   };
+  //   const hideSubList = (childElement: HTMLElement) => {
+  //     childElement.classList.add("hidden");
+  //   };
+
+  const handleMouseEnter = (e: React.MouseEvent<HTMLLIElement, MouseEvent>) => {
+    setIsHovered(true);
+    const element = e.target;
+    console.log(element);
+    // console.log(`firstElementChild: ${element.firstElementChild}`);
+    // console.log(element.firstElementChild);
+
+    // const childElement = e.target.firstChild as HTMLElement;
+    // showSubList(childElement);
+  };
+
+  const handleMouseLeave = (e: React.MouseEvent<HTMLLIElement, MouseEvent>) => {
+    setIsHovered(false);
+    const element = e.target;
+    console.log(element);
+
+    // const childElement = e.target.firstChild as HTMLElement;
+    // hideSubList(childElement);
+  };
+
   return (
     <li
-      className="p-5 ml-5 hover:bg-sky-700 hover:text-center"
-      onMouseOver={showItems}
-      onMouseLeave={hideItems}
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
+      className={isHovered ? `text-sky-700 text-center m-2` : "m-2"}
     >
       {description}
-      {subElements && (
-        <ul className="hidden">
-          {subElements?.map((ele, index) => (
-            <li className="mt-2" key={index}>
-              {ele}
-            </li>
-          ))}
-        </ul>
-      )}
+      {/* {isHovered && children} */}
     </li>
   );
 };

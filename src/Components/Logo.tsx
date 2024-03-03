@@ -1,7 +1,7 @@
 const Logo = () => {
   return (
     <a href="#">
-      <img src="../../public/vite.svg" alt="Logo" className="min-h-16"></img>
+      <img src="../../vite.svg" alt="Logo" className="min-h-16"></img>
     </a>
   );
 };
