@@ -1,12 +1,16 @@
 import Home from "./Pages/Home";
-import Navbar from "./Components/Navbar";
 
 function App() {
+  //   const myDivRef = useRef<HTMLDivElement>(null);
+  //   console.log(myDivRef);
+  //   console.log(myDivRef.current);
+  //   console.log(myDivRef.children);
+
   return (
-    <>
-      <Navbar />
+    <div>
+      Hello
       <Home />;
-    </>
+    </div>
   );
 }
 
